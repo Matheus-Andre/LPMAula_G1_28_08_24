@@ -1,3 +1,4 @@
+import java.text.NumberFormat;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -81,6 +82,41 @@ public class XulambsConveniencias {
     }
     
     public static void main(String[] args) {
-        
+        double valorTotalVendido=0d;
+        Produto[] produtos = cadastrarProdutos();
+    
+        int opcao = exibirMenu();
+        while (opcao!=0){
+        switch (opcao) {
+            case 1 -> iniciarVenda();
+            case 2 -> mostrarTotalVendido(valorTotalVendido);
+        }
+    }
+    pausa();
+    opcao = exibirMenu();
+    }
+    
+    private static Object iniciarVenda(){
+        Produto produto = escolherProduto();
+        while (produto!=null){
+            adicionarNaVenda(produto);
+            produto = 
+        };
+            
+        }
+    }
+    private static void mostrarTotalVendido(double valorTotalVendido){
+        NumberFormat moeda = NumberFormat.getCurrencyInstance();
+        System.out.println("Tuchas");
+        System.out.printf("Valor total vendido hoje: %s\n",
+        moeda.format(valorTotalVendido));
+    }
+    private static int exibirMenu(){
+        System.out.println("Tuchas");
+        System.out.println("1 - Realizar venda");
+        System.out.println("2 - Verificar");
+        System.out.println("0 - Finanlizar");
+        System.out.print("Sua Opção: ");
+    return Integer.parseInt(teclado.nextLine());
     }
 }
